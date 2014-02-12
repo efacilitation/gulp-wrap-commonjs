@@ -1,11 +1,34 @@
 {
   "name": "gulp-commonjs-enhanced",
-  "version": "0.0.0",
   "description": "coming soon... (it does not work at the moment, but stay tunned!)",
+  "url": "https://github.com/medialwerk/gulp-commonjs-enhanced",
+  "author": "Ferdinand Full <reg@medialwerk.de>",
+  "version": "0.0.0",
+  "license": "MIT",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medialwerk/gulp-jade-commonjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/medialwerk/gulp-jade-commonjs/issues"
+  },
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "commonjs",
+    "wrapper"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "BSD-2-Clause"
+  "dependencies": {
+    "lodash": "*",
+    "gulp-util": "*",
+    "through": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect": "*"
+  }
 }

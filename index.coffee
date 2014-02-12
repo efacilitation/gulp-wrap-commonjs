@@ -14,7 +14,7 @@ module.exports = (options = {}) ->
 
   _.defaults options, defaultOptions
 
-  template = fs.readFileSync 'template.js', encoding: 'utf8'
+  template = fs.readFileSync  "#{__dirname}/template.js", encoding: 'utf8'
   template = _.template template
 
   through.obj (file, enc, next) ->

@@ -1,17 +1,17 @@
 {
-  "name": "gulp-commonjs-enhanced",
+  "name": "gulp-commonjs-wrap",
   "description": "coming soon... (it does not work at the moment, but stay tunned!)",
-  "url": "https://github.com/medialwerk/gulp-commonjs-enhanced",
+  "url": "https://github.com/medialwerk/gulp-commonjs-wrap",
   "author": "Ferdinand Full <reg@medialwerk.de>",
   "version": "0.0.2",
   "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medialwerk/gulp-jade-commonjs.git"
+    "url": "https://github.com/medialwerk/gulp-commonjs-wrap.git"
   },
   "bugs": {
-    "url": "https://github.com/medialwerk/gulp-jade-commonjs/issues"
+    "url": "https://github.com/medialwerk/gulp-commonjs-wrap/issues"
   },
   "keywords": [
     "gulp",

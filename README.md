@@ -1,4 +1,4 @@
-gulp-commonjs-enhanced
+gulp-commonjs-wrap
 ======================
 
 coming soon...

@@ -1,6 +1,6 @@
 'use strict'
 
-PLUGIN_NAME = 'gulp-commonjs-enhanced'
+PLUGIN_NAME = 'gulp-commonjs-wrap'
 
 fs                    = require 'fs'
 _ = require 'lodash'

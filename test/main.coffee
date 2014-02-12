@@ -1,11 +1,11 @@
 fs                    = require 'fs'
 gutil                 = require 'gulp-util'
-gulpCommonjsEnhanced  = require '../'
+gulpCommonjsWrap  = require '../'
 
 #expect = require 'expect'
 
 
-describe 'gulp-commonjs-enhanced', ->
+describe 'gulp-commonjs-wrap', ->
 
   it 'should ', (next) ->
 
@@ -17,7 +17,7 @@ describe 'gulp-commonjs-enhanced', ->
       base: 'test/fixtures'
       contents: fs.readFileSync 'test/fixtures/test.js'
 
-    stream = gulpCommonjsEnhanced
+    stream = gulpCommonjsWrap
       pathModifier: (path) ->
         path.replace '.js', ''
 

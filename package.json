@@ -17,15 +17,17 @@
     "gulp",
     "gulpplugin",
     "commonjs",
-    "wrapper"
+    "wrapper",
+    "wrap"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "dependencies": {
     "lodash": "*",
     "gulp-util": "*",
-    "through": "*"
+    "through2": "*",
+    "coffee-script": "~1.7.1"
   },
   "devDependencies": {
     "mocha": "*",

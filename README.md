@@ -6,7 +6,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Wraps .js files into CommonJS into require.register for client-side usage.</td>
+<td>Wraps .js files into CommonJS require.register defintion for browser usage.</td>
 </tr>
 </table>
 

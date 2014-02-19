@@ -2,8 +2,8 @@
 
 PLUGIN_NAME = 'gulp-commonjs-wrap'
 
-fs                    = require 'fs'
-_ = require 'lodash'
+fs      = require 'fs'
+_       = require 'lodash'
 through = require 'through2'
 
 defaultOptions =

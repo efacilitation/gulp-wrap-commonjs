@@ -21,13 +21,18 @@ module.exports = (options = {}) ->
 
     if file.isBuffer()
 
-      filePath = options.pathModifier file.relative
+      filePath = options.pathModifier file.path
 
       params =
         contents: file.contents.toString 'utf8'
         filePath: filePath
 
       file.contents = new Buffer template params
+
+      if options.autoRequire
+        requireBuffer = new Buffer "require(\"#{filePath}\");"
+        newBuffer = Buffer.concat [file.contents, requireBuffer]
+        file.contents = newBuffer
 
     next null, file
     #console.log this

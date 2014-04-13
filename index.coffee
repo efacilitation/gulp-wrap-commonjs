@@ -26,13 +26,10 @@ module.exports = (options = {}) ->
       params =
         contents: file.contents.toString 'utf8'
         filePath: filePath
+        autoRequire: options.autoRequire
+        exports: options.moduleExports
 
       file.contents = new Buffer template params
 
-      if options.autoRequire
-        requireBuffer = new Buffer "require(\"#{filePath}\");"
-        newBuffer = Buffer.concat [file.contents, requireBuffer]
-        file.contents = newBuffer
 
     next null, file
-    #console.log this

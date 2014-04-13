@@ -2,7 +2,7 @@
 
 <table>
 <tr>
-<td>Package</td><td>gulp-commonjs-wrap</td>
+<td>Package</td><td>gulp-wrap-commonjs</td>
 </tr>
 <tr>
 <td>Description</td>
@@ -12,23 +12,24 @@
 
 ## Usage
 
-First, install `gulp-commonjs-wrap` as a development dependency:
+First, install `gulp-wrap-commonjs` as a development dependency:
 
 ```shell
-npm install --save-dev gulp-commonjs-wrap
+npm install --save-dev gulp-wrap-commonjs
 ```
 
 Then, add it to your `gulpfile.js`:
 
 ```javascript
-var commonjsWrap = require('gulp-commonjs-wrap');
+var wrapCommonjs = require('gulp-wrap-commonjs');
 
 gulp.task('commonjs', function(){
   gulp.src(['lib/*.js'])
-    .pipe(commonjsWrap())
+    .pipe(wrapCommonjs())
     .pipe(gulp.dest('build/'));
 });
 ```
+
 
 
 ### CommonJS loader
@@ -48,7 +49,7 @@ Whether to append a require() on the `filepath` directly after the wrap.
 Example:
 
 ```javascript
-var commonjsWrap = require('gulp-commonjs-wrap');
+var commonjsWrap = require('gulp-wrap-commonjs');
 
 gulp.task('commonjs', function(){
   gulp.src(['lib/*.js'])
@@ -68,7 +69,7 @@ Allows you to set a function in which you can modify the filepath.
 Example:
 
 ```javascript
-var commonjsWrap = require('gulp-commonjs-wrap');
+var commonjsWrap = require('gulp-wrap-commonjs');
 
 gulp.task('commonjs', function(){
   gulp.src(['lib/*.js'])
@@ -78,6 +79,26 @@ gulp.task('commonjs', function(){
         return path
       }
     }))
+    .pipe(gulp.dest('build/'));
+});
+```
+
+
+
+#### options.moduleExports
+Type: `Function`
+Default: `false`
+
+Allows you to set a `module.exports` at the end of the `content`
+
+Example using Jade:
+
+```javascript
+var wrapCommonjs = require('gulp-wrap-commonjs');
+
+gulp.task('commonjs', function(){
+  gulp.src(['lib/*.js'])
+    .pipe(wrapCommonjs({moduleExports: "template"}))
     .pipe(gulp.dest('build/'));
 });
 ```

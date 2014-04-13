@@ -10,18 +10,22 @@ defaultOptions =
   autoRequire: false
   moduleExports: false
   pathModifier: false
+  coffee: false
+
+isCoffeeScript = (filePath) ->
+  filePath.slice(-7) is '.coffee'
 
 module.exports = (options = {}) ->
 
   _.defaults options, defaultOptions
 
-  template = fs.readFileSync  "#{__dirname}/template.js", encoding: 'utf8'
-  template = _.template template
+  templateJs     = _.template fs.readFileSync  "#{__dirname}/template.js", encoding: 'utf8'
+  templateCoffee = _.template fs.readFileSync  "#{__dirname}/template.coffee", encoding: 'utf8'
 
   through.obj (file, enc, next) ->
-
     if file.isBuffer()
 
+      filePath = file.path
       if typeof options.pathModifier is "function"
         filePath = options.pathModifier file.path
 
@@ -31,7 +35,13 @@ module.exports = (options = {}) ->
         autoRequire: options.autoRequire
         moduleExports: options.moduleExports
 
-      file.contents = new Buffer template params
+      if options.coffee || isCoffeeScript file.path
+        wrappedContent = templateCoffee params
+
+      else
+        wrappedContent = templateJs params
+
+      file.contents = new Buffer wrappedContent
 
 
     next null, file

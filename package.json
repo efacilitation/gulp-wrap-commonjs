@@ -1,12 +1,12 @@
 {
   "name": "gulp-wrap-commonjs",
-  "description": "Wrap JS- or Coffee-Files into a CommonJS module definition compatible with the Node.js require() API.",
+  "description": "Wrap files into a CommonJS module definition compatible with the Node.js require() API.",
   "url": "https://github.com/efacilitation/gulp-wrap-commonjs",
   "author": {
     "name": "efa Gmbh",
     "email": "team@efa-gmbh.com"
   },
-  "version": "0.1.1",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "index.coffee",
   "repository": {

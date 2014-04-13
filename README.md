@@ -6,7 +6,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Wrap JS- or Coffee-Files into a CommonJS module definition compatible with the Node.js require() API.</td>
+<td>Wrap files into a CommonJS module definition compatible with the Node.js require() API.</td>
 </tr>
 </table>
 
@@ -29,6 +29,8 @@ gulp.task('commonjs', function(){
     .pipe(gulp.dest('build/'));
 });
 ```
+
+Works with JavaScript- and CoffeeScript-Files.
 
 
 

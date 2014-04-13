@@ -1,9 +1,9 @@
 require.register("<%= filePath %>", function(exports, require, module){
   <%= contents %>
-  <% if (moduleExports != "undefined") { %>
+  <% if (moduleExports) { %>
   module.exports = <%= moduleExports %>;
   <% } %>
 });
-<% if (autoRequire === true) { %>
+<% if (autoRequiretrue) { %>
 require("<%= filePath %>");
 <% } %>

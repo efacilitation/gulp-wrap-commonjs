@@ -7,8 +7,9 @@ _       = require 'lodash'
 through = require 'through2'
 
 defaultOptions =
-  pathModifier: (path) ->
-    path
+  autoRequire: false
+  moduleExports: false
+  pathModifier: false
 
 module.exports = (options = {}) ->
 
@@ -21,7 +22,8 @@ module.exports = (options = {}) ->
 
     if file.isBuffer()
 
-      filePath = options.pathModifier file.path
+      if typeof options.pathModifier is "function"
+        filePath = options.pathModifier file.path
 
       params =
         contents: file.contents.toString 'utf8'

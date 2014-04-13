@@ -29,7 +29,7 @@ module.exports = (options = {}) ->
         contents: file.contents.toString 'utf8'
         filePath: filePath
         autoRequire: options.autoRequire
-        exports: options.moduleExports
+        moduleExports: options.moduleExports
 
       file.contents = new Buffer template params
 

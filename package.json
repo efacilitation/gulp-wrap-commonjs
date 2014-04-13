@@ -1,9 +1,12 @@
 {
   "name": "gulp-wrap-commonjs",
-  "description": "Wraps Files into CommonJS require.register definition for browser usage.",
+  "description": "Wrap Files into CommonJS loader definition.",
   "url": "https://github.com/efacilitation/gulp-wrap-commonjs",
-  "author": "Ferdinand Full <reg@medialwerk.de>",
-  "version": "0.0.5",
+  "author": {
+    "name": "efa Gmbh",
+    "email": "team@efa-gmbh.com"
+  },
+  "version": "0.0.6",
   "license": "MIT",
   "main": "index.coffee",
   "repository": {

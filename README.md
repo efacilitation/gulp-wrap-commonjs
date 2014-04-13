@@ -6,7 +6,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Wraps .js files into CommonJS require.register definition for browser usage.</td>
+<td>Wrap Files into CommonJS loader definition.</td>
 </tr>
 </table>
 
@@ -32,7 +32,7 @@ gulp.task('commonjs', function(){
 
 
 ### CommonJS loader
-You'll need a loader to detect your wrapped packages. You can use this simple [CommonJS loader](https://github.com/efacilitation/commonjs-loader).
+You'll need a loader to detect your wrapped packages. You can use [this CommonJS loader](https://github.com/efacilitation/commonjs-loader) which is compatible with the NodeJS `require()` API.
 
 
 ## API
@@ -84,4 +84,7 @@ gulp.task('commonjs', function(){
 
 
 ## License
-Licensed under the MIT license.
+
+MIT
+
+Copyright (c) 2014 efa GmbH (http://efa-gmbh.com/)

@@ -6,9 +6,9 @@
     "name": "efa Gmbh",
     "email": "team@efa-gmbh.com"
   },
-  "version": "0.1.2",
+  "version": "0.1.4",
   "license": "MIT",
-  "main": "index.coffee",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/efacilitation/gulp-wrap-commonjs.git"
@@ -25,16 +25,17 @@
     "wrap"
   ],
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "node_modules/.bin/coffee -c index.coffee"
   },
   "dependencies": {
     "lodash": "*",
     "gulp-util": "*",
-    "through2": "*",
-    "coffee-script": "~1.7.1"
+    "through2": "*"
   },
   "devDependencies": {
     "mocha": "*",
-    "expect": "*"
+    "expect": "*",
+    "coffee-script": "~1.7.1"
   }
 }

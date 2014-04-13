@@ -34,8 +34,9 @@ Works with JavaScript- and CoffeeScript-Files.
 
 
 
-### CommonJS loader
-You'll need a loader to detect your wrapped packages. You can use [this CommonJS loader](https://github.com/efacilitation/commonjs-loader) which is compatible with the NodeJS `require()` API.
+### CommonJS Require
+
+You need a `require.register` function in the scope where you add the wrapped files. It's recommended to use [commonjs-require](https://github.com/efacilitation/commonjs-require) for this purpose.
 
 
 ## API

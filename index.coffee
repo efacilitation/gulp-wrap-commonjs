@@ -19,8 +19,8 @@ module.exports = (options = {}) ->
 
   _.defaults options, defaultOptions
 
-  templateJs     = _.template fs.readFileSync  "#{__dirname}/template.js", encoding: 'utf8'
-  templateCoffee = _.template fs.readFileSync  "#{__dirname}/template.coffee", encoding: 'utf8'
+  templateJs     = _.template fs.readFileSync  "#{__dirname}/templates/js.tpl", encoding: 'utf8'
+  templateCoffee = _.template fs.readFileSync  "#{__dirname}/templates/coffee.tpl", encoding: 'utf8'
 
   through.obj (file, enc, next) ->
     if file.isBuffer()

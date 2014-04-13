@@ -6,7 +6,7 @@
 </tr>
 <tr>
 <td>Description</td>
-<td>Wrap Files into CommonJS loader definition.</td>
+<td>Wrap JS- or Coffee-Files into a CommonJS module definition compatible with the Node.js require() API.</td>
 </tr>
 </table>
 
@@ -97,8 +97,26 @@ Example using Jade:
 var wrapCommonjs = require('gulp-wrap-commonjs');
 
 gulp.task('commonjs', function(){
-  gulp.src(['lib/*.js'])
+  gulp.src(['lib/*.jade'])
     .pipe(wrapCommonjs({moduleExports: "template"}))
+    .pipe(gulp.dest('build/'));
+});
+```
+
+#### options.coffee
+Type: `Boolean`
+Default: `false`
+
+Force wrapping into CoffeeScript. By default this will get set by detecting the file-extension `.coffee`.
+
+Example:
+
+```javascript
+var wrapCommonjs = require('gulp-wrap-commonjs');
+
+gulp.task('commonjs', function(){
+  gulp.src(['lib/*.txt'])
+    .pipe(wrapCommonjs({coffee: true}))
     .pipe(gulp.dest('build/'));
 });
 ```

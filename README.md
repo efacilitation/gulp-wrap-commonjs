@@ -1,12 +1,12 @@
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>gulp-commonjs-wrap</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>Wraps .js files into CommonJS require.register defintion for browser usage.</td>
+<td>Wraps .js files into CommonJS require.register definition for browser usage.</td>
 </tr>
 </table>
 
@@ -32,17 +32,15 @@ gulp.task('commonjs', function(){
 
 
 ### CommonJS loader
-You'll need a loader to detect your wrapped packages. You can use this simple [CommonJS loader](https://github.com/brunch/commonjs-require-definition) which is based off how [brunch.io](http://brunch.io) loads CommonJS packages.
+You'll need a loader to detect your wrapped packages. You can use this simple [CommonJS loader](https://github.com/efacilitation/commonjs-loader).
 
-[grunt]: https://github.com/gruntjs/grunt
-[getting_started]: https://github.com/gruntjs/grunt/wiki/Getting-started
 
 ## API
 
 ### commonjsWrap(options)
 
 #### options.autoRequire
-Type: `Boolean`  
+Type: `Boolean`
 Default: `false`
 
 Whether to append a require() on the `filepath` directly after the wrap.
@@ -62,7 +60,7 @@ gulp.task('commonjs', function(){
 ```
 
 #### options.pathModifier
-Type: `Function`  
+Type: `Function`
 Default: `false`
 
 Allows you to set a function in which you can modify the filepath.

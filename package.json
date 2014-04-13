@@ -1,21 +1,22 @@
 {
-  "name": "gulp-commonjs-wrap",
-  "description": "coming soon... (it does not work at the moment, but stay tunned!)",
-  "url": "https://github.com/medialwerk/gulp-commonjs-wrap",
+  "name": "gulp-wrap-commonjs",
+  "description": "Wraps Files into CommonJS require.register definition for browser usage.",
+  "url": "https://github.com/efacilitation/gulp-wrap-commonjs",
   "author": "Ferdinand Full <reg@medialwerk.de>",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "index.coffee",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medialwerk/gulp-commonjs-wrap.git"
+    "url": "https://github.com/efacilitation/gulp-wrap-commonjs.git"
   },
   "bugs": {
-    "url": "https://github.com/medialwerk/gulp-commonjs-wrap/issues"
+    "url": "https://github.com/efacilitation/gulp-wrap-commonjs/issues"
   },
   "keywords": [
     "gulp",
     "gulpplugin",
+    "cjs",
     "commonjs",
     "wrapper",
     "wrap"

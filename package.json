@@ -6,7 +6,7 @@
     "name": "efa Gmbh",
     "email": "team@efa-gmbh.com"
   },
-  "version": "0.1.10",
+  "version": "0.1.12",
   "license": "MIT",
   "main": "index.js",
   "repository": {

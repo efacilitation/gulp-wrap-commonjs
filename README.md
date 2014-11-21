@@ -110,7 +110,7 @@ When passed in a function the value of `module.exports` can be determined dynami
 When used the path of each processed file is passed as argument to the function.
 If the function returns `null` or `undefined` no `module.exports` will be set.
 
-```
+```javascript
 var wrapCommonjs = require('gulp-wrap-commonjs');
 
 gulp.task('commonjs', function(){

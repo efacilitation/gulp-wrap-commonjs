@@ -89,8 +89,8 @@ gulp.task('commonjs', function(){
 
 
 #### options.moduleExports
-Type: `Function`
-Default: `false`
+Type: `Function` or `String`
+Default: `null`
 
 Allows you to set a `module.exports` at the end of the `content`
 
@@ -102,6 +102,26 @@ var wrapCommonjs = require('gulp-wrap-commonjs');
 gulp.task('commonjs', function(){
   gulp.src(['lib/*.jade'])
     .pipe(wrapCommonjs({moduleExports: "template"}))
+    .pipe(gulp.dest('build/'));
+});
+```
+
+When passed in a function the value of `module.exports` can be determined dynamically.
+When used the path of each processed file is passed as argument to the function.
+If the function returns `null` or `undefined` no `module.exports` will be set.
+
+```
+var wrapCommonjs = require('gulp-wrap-commonjs');
+
+gulp.task('commonjs', function(){
+  gulp.src(['lib/*.jade'])
+    .pipe(wrapCommonjs({
+      moduleExports: function(path) {
+        if (path.indexOf('some-module') > 0) {
+          return 'someExports';
+        }
+      }
+    }))
     .pipe(gulp.dest('build/'));
 });
 ```

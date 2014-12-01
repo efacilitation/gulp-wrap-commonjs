@@ -5,5 +5,7 @@ require.register("<%= filePath %>", function(exports, require, module){
   <% } %>
 });
 <% if (autoRequire) { %>
-require("<%= filePath %>");
+setTimeout(function() {
+  require("<%= filePath %>");
+}, 1);
 <% } %>

@@ -28,16 +28,12 @@ module.exports = (options = {}) ->
       filePath = file.path
       if typeof options.pathModifier is "function"
         filePath = options.pathModifier file.path
-
-      moduleExports = options.moduleExports
-      if typeof moduleExports is 'function'
-        moduleExports = moduleExports file.path
-
+        
       params =
         contents: file.contents.toString 'utf8'
         filePath: filePath
         autoRequire: options.autoRequire
-        moduleExports: moduleExports
+        moduleExports: options.moduleExports
 
       if options.coffee || isCoffeeScript file.path
         wrappedContent = templateCoffee params

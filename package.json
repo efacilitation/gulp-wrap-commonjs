@@ -6,7 +6,7 @@
     "name": "efa Gmbh",
     "email": "team@efa-gmbh.com"
   },
-  "version": "0.1.13",
+  "version": "0.1.14",
   "license": "MIT",
   "main": "index.js",
   "repository": {
@@ -25,13 +25,15 @@
     "wrap"
   ],
   "scripts": {
-    "test": "mocha",
+    "test": "npm run prepublish && mocha",
     "prepublish": "node_modules/.bin/coffee -c index.coffee"
   },
   "dependencies": {
-    "lodash": "*",
     "gulp-util": "*",
-    "through2": "*"
+    "lodash": "*",
+    "regexp-sourcemaps": "^1.0.1",
+    "through2": "*",
+    "vinyl-sourcemaps-apply": "^0.1.4"
   },
   "devDependencies": {
     "mocha": "*",

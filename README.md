@@ -32,6 +32,7 @@ gulp.task('commonjs', function(){
 
 Works with JavaScript- and CoffeeScript-Files.
 
+Supports sourcemaps. Just add a proper pipe in a `sourcemaps.init()` stream from `gulp-sourcemaps`.
 
 
 ### CommonJS Require

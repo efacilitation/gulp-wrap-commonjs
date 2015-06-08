@@ -63,6 +63,40 @@ gulp.task('commonjs', function(){
 });
 ```
 
+#### options.relativePath
+Type: `String`
+Default: `false`
+
+Allows you to set a base directory, which will allow modules to use relative
+paths.
+
+Example:
+
+```javascript
+var commonjsWrap = require('gulp-wrap-commonjs');
+
+gulp.task('commonjs', function(){
+  gulp.src(['lib/*.js'])
+    .pipe(commonjsWrap({
+      relativePath: 'lib'
+    }))
+    .pipe(gulp.dest('build/'));
+});
+
+```
+
+produces modules that look like:
+
+```js
+require.register("module.js", function(exports, require, module){
+```
+
+instead of
+
+```js
+require.register("/path/to/project/lib/module.js", function(exports, require, module){
+```
+
 #### options.pathModifier
 Type: `Function`
 Default: `false`

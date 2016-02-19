@@ -1,5 +1,5 @@
 require.register "<%= filePath %>", (exports, require, module) ->
-  <%= contents %>
+  $0
   <% if (moduleExports) { %>
   module.exports = <%= moduleExports %>
   <% } %>

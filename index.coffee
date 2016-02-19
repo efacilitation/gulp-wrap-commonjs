@@ -3,12 +3,14 @@
 PLUGIN_NAME = 'gulp-wrap-commonjs'
 
 fs      = require 'fs'
+path    = require 'path'
 _       = require 'lodash'
 through = require 'through2'
 
 defaultOptions =
   autoRequire: false
   moduleExports: false
+  relativePath: false
   pathModifier: false
   coffee: false
 
@@ -28,7 +30,9 @@ module.exports = (options = {}) ->
       filePath = file.path
       if typeof options.pathModifier is "function"
         filePath = options.pathModifier file.path
-        
+      if typeof options.relativePath is "string"
+        filePath = path.relative(path.join(process.cwd(), options.relativePath), filePath)
+
       params =
         contents: file.contents.toString 'utf8'
         filePath: filePath

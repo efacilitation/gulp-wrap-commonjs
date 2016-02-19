@@ -2,10 +2,12 @@
 
 PLUGIN_NAME = 'gulp-wrap-commonjs'
 
-fs      = require 'fs'
-path    = require 'path'
-_       = require 'lodash'
-through = require 'through2'
+path            = require 'path'
+fs              = require 'fs'
+_               = require 'lodash'
+through         = require 'through2'
+Replacer        = require 'regexp-sourcemaps'
+applySourceMaps = require 'vinyl-sourcemaps-apply'
 
 defaultOptions =
   autoRequire: false
@@ -18,7 +20,6 @@ isCoffeeScript = (filePath) ->
   filePath.slice(-7) is '.coffee'
 
 module.exports = (options = {}) ->
-
   _.defaults options, defaultOptions
 
   templateJs     = _.template fs.readFileSync  "#{__dirname}/templates/js.tpl", encoding: 'utf8'
@@ -34,18 +35,24 @@ module.exports = (options = {}) ->
         filePath = path.relative(path.join(process.cwd(), options.relativePath), filePath)
 
       params =
-        contents: file.contents.toString 'utf8'
         filePath: filePath
         autoRequire: options.autoRequire
         moduleExports: options.moduleExports
 
       if options.coffee || isCoffeeScript file.path
-        wrappedContent = templateCoffee params
+        wrappedReplace = templateCoffee params
 
       else
-        wrappedContent = templateJs params
+        wrappedReplace = templateJs params
 
-      file.contents = new Buffer wrappedContent
+      replacer = new Replacer(/^(.|\n)*$/, wrappedReplace, (filePath + '.commonjs-wrap'))
+
+      res = replacer.replace (file.contents.toString 'utf8'), file.relative
+
+      file.contents = new Buffer res.code
+
+      if file.sourceMap
+        applySourceMaps file, res.map
 
 
     next null, file
